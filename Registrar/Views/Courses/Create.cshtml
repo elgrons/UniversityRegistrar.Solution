@@ -1,0 +1,15 @@
+<!-- @{
+  Layout = "_Layout";
+}
+
+@using Registrar.Models.Course
+
+<h1>Add Course</h1>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.CourseName)
+  @Html.TextBoxFor(model => model.CourseName)
+  <input type="submit" value="Add new category" />
+}
+<p>@Html.ActionLink("Show all Courses", "Index")</p> -->
