@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Registrar.Models;
 using System.Collections.Generic;
@@ -31,6 +32,21 @@ namespace Registrar.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Details(int id)
+    {
+      Course thisCourse = _db.Courses
+                              .Include(courses => courses.Students)
+                              .FirstOrDefault(courses => courses.CourseId == id);
+      return View(thisCourse);
+    }
+
+  //   public ActionResult Details(int id)
+  // {
+  //   Course thisCourse = _db.Courses.Include(course => course.Students)
+  //   .ThenInclude(student => student.JoinEntities)
+  //   .FirstOrDefault(course => course.CourseId == id);
+  // }
 
 
 
