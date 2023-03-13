@@ -70,12 +70,10 @@ An app for a University Registrar to keep track of students and courses.
 
 * _Any known issues_
 
-* _Please reach out with any questions or concerns to [eliot.lauren@gmail.com](eliot.lauren@gmail.com)_
+* _Please reach out with any questions or concerns to [eliot.lauren@gmail.com](eliot.lauren@gmail.com), [vera.weikel@gmail.com](vera.weikel@gmail.com)_
 
 ## License
 
 _[MIT](https://opensource.org/license/mit/)_
 
 Copyright (c) _2023_ _Eliot Gronstal, Vera Weikel_
-
-update update 

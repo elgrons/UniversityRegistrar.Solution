@@ -7,7 +7,7 @@
 
 <h2>Course Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.CourseName): @Html.DisplayFor(model => model.CourseName)</h3>  
+<h3>@Html.DisplayNameFor(model => model.CourseName): @Html.DisplayFor(model => model.CourseName)</h3>
 <h3>@Html.DisplayNameFor(model => model.CourseNumber): @Html.DisplayFor(model => model.CourseNumber)</h3>  
 
 @if (@Model.Students.Count == 0)
@@ -19,12 +19,9 @@ else
   <h3>Students:</h3>
   <ul>
     @foreach (Student student in Model.Students)
-    {
-      if (Student.Course.CourseId == model.CourseId)
       {
       <li>@Html.ActionLink($"{student.StudentName}", "Details", "Students", new { id = student.StudentId })</li>
       }
-    }
   </ul>
 }
 
