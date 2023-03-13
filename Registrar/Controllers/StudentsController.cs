@@ -18,17 +18,24 @@ namespace Registrar.Controllers
 
     public ActionResult Index()
     {
-      return View(_db.Students.ToList());
-      // List<Student> model = View(_db.Students.Include(student => student.Course).ToList()); 
-      // return View(model);
+      List<Student> model = _db.Students
+                                .Include(student => student.Course)
+                                .ToList();
+      return View(model);
     }
 
     public ActionResult Details(int id)
     {
       Student thisStudent = _db.Students
                           .Include(student => student.Course)
-                          .FirstOrDefault(course => course.CourseId == id);
+                          .FirstOrDefault(student => student.StudentId == id);
       return View(thisStudent);
+    }
+
+    public ActionResult Create()
+    {
+      ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "CourseName");
+      return View();
     }
 
     [HttpPost]
@@ -73,31 +80,6 @@ namespace Registrar.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
   }
 }
-//     public ActionResult Delete(int id)
-//     {
-//       Tag thisTag = _db.Tags.FirstOrDefault(tags => tags.TagId == id);
-//       return View(thisTag);
-//     }
-
-//     [HttpPost, ActionName("Delete")]
-//     public ActionResult DeleteConfirmed(int id)
-//     {
-//       Tag thisTag = _db.Tags.FirstOrDefault(tags => tags.TagId == id);
-//       _db.Tags.Remove(thisTag);
-//       _db.SaveChanges();
-//       return RedirectToAction("Index");
-//     }
-
-//     [HttpPost]
-//     public ActionResult DeleteJoin(int joinId)
-//     {
-//       ItemTag joinEntry = _db.ItemTags.FirstOrDefault(entry => entry.ItemTagId == joinId);
-//       _db.ItemTags.Remove(joinEntry);
-//       _db.SaveChanges();
-//       return RedirectToAction("Index");
-//     }
-
-//   }
-// }

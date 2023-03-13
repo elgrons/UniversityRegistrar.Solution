@@ -11,12 +11,14 @@
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.StudentName)
+  @Html.LabelFor(model => model.StudentName, "Student Name")
   @Html.TextBoxFor(model => model.StudentName)
 
   @Html.LabelFor(model => model.Course)
   @Html.DropDownList("CourseId")
   
-  <input type="submit" value="Add new student" class="btn btn-default" />
+  <input type="submit" value="Add new student" />
 }
 <p>@Html.ActionLink("Show all students", "Index")</p>
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
