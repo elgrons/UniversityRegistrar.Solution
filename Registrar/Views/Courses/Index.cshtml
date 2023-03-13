@@ -10,14 +10,15 @@ if( @Model.Count == 0)
 {
   <h3>No courses yet added</h3>
 }
-<!-- <ul>
+@* <ul>
   @foreach(Course course in Model)
   {
-    <li>@Html.ActionLink($"{course.CourseName}", "Details", new { courseId = course.CourseId})</li>
+    <li>@Html.ActionLink($"{course.CourseName}", "Details", new { id = course.CourseId})</li>
   }
-</ul> -->
+</ul> *@
 
-<!-- <p>@Html.ActionLink("Add new course", "Create")</p>  -->
+<p>@Html.ActionLink("Add new course", "Create")</p>
 
-<!-- <p>@Html.ActionLink("Add new student", "Create", "Students")</p> -->
+<p>@Html.ActionLink("Add new student", "Create", "Students")</p>
+
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
