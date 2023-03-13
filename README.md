@@ -77,3 +77,5 @@ An app for a University Registrar to keep track of students and courses.
 _[MIT](https://opensource.org/license/mit/)_
 
 Copyright (c) _2023_ _Eliot Gronstal, Vera Weikel_
+
+update update 
