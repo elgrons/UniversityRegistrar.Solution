@@ -6,17 +6,17 @@ using System;
 namespace Registrar.Tests
 {
   [TestClass]
-  public class ClassNameTests
+  public class CourseTests
   {
   [TestMethod]
-    public void ClassNameConstructor_CreatesInstanceOfClassName_ClassName()
+    public void CourseConstructor_CreatesInstanceOfCourse_Course()
     {
       // Arrange
-      ClassName newClass = new ClassName(2, 3, 8);
+      Course newCourse = new Course;
       // Act
       //not needed here
       // Assert
-    Assert.AreEqual(typeof(ClassName), newClass.GetType());
+    Assert.AreEqual(typeof(Course), newCourse.GetType());
     }
   }
 }
